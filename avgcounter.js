@@ -3,6 +3,7 @@ var counter = {};
 var avgs = {};
 var intervals = {};
 var observations = {};
+var DEBUG = false;
 
 // INIT
 // sets up the counter with a measuring interval
@@ -13,9 +14,18 @@ exports.init = function(ns, interval, num_observations) {
 	observations[ns] = num_observations;
 
 	intervals[ns] = setInterval(function() {
-		avgs[ns].push(counter[ns]);
-		counter[ns] = 0;
-		avgs[ns].splice(-observations[ns]);
+
+		if(counter[ns] > 0) {
+
+			if(avgs[ns].length >= observations[ns]) {
+				avgs[ns].shift();	
+			}
+
+			avgs[ns].push(counter[ns]);
+			counter[ns] = 0;
+		}
+
+		if(DEBUG) console.log("check interval");
 	}, interval);
 };
 
@@ -24,6 +34,7 @@ exports.init = function(ns, interval, num_observations) {
 // your namespace
 exports.incr = function(ns) {
 	counter[ns]++;
+	if(DEBUG) if(DEBUG) console.log(counter);
 };
 
 // GET
@@ -31,11 +42,17 @@ exports.incr = function(ns) {
 // value of your namespace
 exports.get = function(ns) {
 	var sum = 0;
-	for(var i in avgs[ns]) {
-		sum *= avgs[ns][i];
+	var tmp = avgs[ns];
+	for(var i in tmp) {
+		sum += tmp[i];
 	}
 
-	return sum / avgs[ns].length;
+	if(DEBUG) console.log(tmp);
+
+	if(tmp.length > 0) {
+		return sum / tmp.length;
+	}
+	else return 0.0;
 };
 
 // STOP

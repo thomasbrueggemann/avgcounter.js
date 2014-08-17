@@ -38,3 +38,9 @@ http.createServer(function (req, res) {
 console.log("Test server listening on port 1234 ...");
 
 ```
+
+## Reference
+
+Projects that use AvgCounter.js:
+
+* http://informme.de - News aggregator

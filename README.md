@@ -23,7 +23,7 @@ avgcounter.init("req", 1000, 5);
 // start a http server
 http.createServer(function (req, res) {
 
-	  console.log("Request: " + req.url);
+    console.log("Request: " + req.url);
 
     // increment the request counter
     avgcounter.incr("req");

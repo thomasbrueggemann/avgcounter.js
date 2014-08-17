@@ -15,7 +15,7 @@ Here is a fun little example. A request per second counter:
 
 ```javascript
 var http = require("http");
-var avgcounter = require("./avgcounter");
+var avgcounter = require("avgcounter");
 
 // init the request per second counter and keep 5 observations
 avgcounter.init("req", 1000, 5);

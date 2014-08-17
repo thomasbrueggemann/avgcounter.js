@@ -62,7 +62,7 @@ Stops tracking of your counter at the given namespace.
 
 ## Future features / ideas
 
-* Redis as a datastore for counter values
+* Redis as an optional datastore for counter values
 * Better error handling, to keep track if a namespace has been initialized and so on
 
 

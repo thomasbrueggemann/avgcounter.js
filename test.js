@@ -7,6 +7,8 @@ avgcounter.init("req", 1000, 5);
 // start a http server
 http.createServer(function (req, res) {
 
+	console.log("Request: " + req.url);
+
 	avgcounter.incr("req");
 
   	res.writeHead(200, {"Content-Type": "text/plain"});

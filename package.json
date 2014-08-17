@@ -1,5 +1,5 @@
 {
-  "name": "AvgCounter.js",
+  "name": "avgcounter",
   "description": "Counts things and averages them per whatever time unit you like",
   "version": "1.0.0",
   "private": false,

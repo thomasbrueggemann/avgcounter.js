@@ -3,6 +3,14 @@ AvgCounter.js
 
 Counts things and averages them per whatever time unit you like.
 
+## Installation
+
+```javascript
+npm install avgcounter
+```
+
+## Usage
+
 Here is a fun little example. A request per second counter:
 
 ```javascript

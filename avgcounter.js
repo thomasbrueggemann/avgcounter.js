@@ -17,7 +17,7 @@ module.exports = {
 
 		intervals[ns] = setInterval(function() {
 
-			if(counter[ns] > 0) {
+			//if(counter[ns] > 0) {
 
 				if(avgs[ns].length >= observations[ns]) {
 					avgs[ns].shift();	
@@ -25,7 +25,7 @@ module.exports = {
 
 				avgs[ns].push(counter[ns]);
 				counter[ns] = 0;
-			}
+			//}
 
 			if(DEBUG) console.log("check interval");
 		}, interval);

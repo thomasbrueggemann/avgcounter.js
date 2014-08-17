@@ -35,7 +35,7 @@ http.createServer(function (req, res) {
 
 }).listen(1234);
 
-console.log("Test server listening on port 1234 ...");
+console.log("You may want to go to http://localhost:1234 to see some of the magic.");
 
 ```
 

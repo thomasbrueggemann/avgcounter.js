@@ -43,4 +43,4 @@ console.log("You may want to go to http://localhost:1234 to see some of the magi
 
 Projects that use AvgCounter.js:
 
-* https://informme.de - News aggregator
+* https://informme.de - News aggregator that counts crawled articles per minute
